@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+/* ============================================
+   Workfolio Design System - Fiverr-inspired
+   Primary Green: #15803d
+   ============================================ */
+
+:root {
+  /* Brand Colors */
+  --primary: #15803d;
+  --primary-dark: #166534;
+  --primary-light: #f0fdf4;
+  
+  /* Neutrals */
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  
+  --muted: #f8fafc;
+  --muted-foreground: #64748b;
+  
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #15803d;
+  
+  /* Accents */
+  --success: #16a34a;
+  --warning: #f59e0b;
+  --destructive: #ef4444;
+  
+  /* Typography */
+  --radius: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+}
+
+.dark {
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  --card: #1e293b;
+  --card-foreground: #f8fafc;
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+  --border: #334155;
+  --input: #334155;
+}
+
+/* Base */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #f8fafc;
+}
+
+body {
+  font-feature-settings: "rlig" 1, "kern" 1;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+/* Fiverr-style Gig Card */
+.gig-card {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gig-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* Search Bar - Fiverr prominent style */
+.search-input {
+  transition: all 0.2s ease;
+}
+
+.search-input:focus {
+  box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.1);
+}
+
+/* Category Card */
+.category-card {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.category-card:hover {
+  transform: translateY(-2px);
+  border-color: #15803d;
+  background-color: #f0fdf4;
+}
+
+/* Package Cards in Gig Modal */
+.package-card {
+  transition: all 0.15s ease;
+  border: 2px solid #e2e8f0;
+}
+
+.package-card:hover {
+  border-color: #15803d;
+}
+
+.package-card.selected {
+  border-color: #15803d;
+  background-color: #f0fdf4;
+  box-shadow: 0 0 0 1px #15803d;
+}
+
+/* Star Rating */
+.star {
+  color: #f59e0b;
+}
+
+/* Buttons - Professional Green */
+.btn-primary {
+  background-color: #15803d;
+  color: white;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #166534;
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: scale(0.985);
+}
+
+/* Modal */
+.modal-content {
+  animation: modalEnter 0.2s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+@keyframes modalEnter {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Filter Chips */
+.filter-chip {
+  transition: all 0.1s ease;
+}
+
+.filter-chip.active {
+  background-color: #15803d;
+  color: white;
+  border-color: #15803d;
+}
+
+/* Mobile Bottom Safe Area */
+@media (max-width: 640px) {
+  .mobile-safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Custom Scrollbar for modals */
+.modal-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
